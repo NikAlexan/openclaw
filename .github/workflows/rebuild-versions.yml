@@ -19,8 +19,8 @@ on:
 env:
   GITHUB_REGISTRY: ghcr.io
   DOCKER_REGISTRY: docker.io
-  IMAGE_NAME: coollabsio/openclaw
-  BASE_IMAGE_NAME: coollabsio/openclaw-base
+  IMAGE_NAME: nikalexan/openclaw
+  BASE_IMAGE_NAME: nikalexan/openclaw-base
 
 jobs:
   get-versions:
