@@ -1,6 +1,6 @@
 services:
   openclaw:
-    image: coollabsio/openclaw:latest
+    image: nikalexan/openclaw:latest
     ports:
       - "${PORT:-8080}:${PORT:-8080}"
     environment:
@@ -28,7 +28,7 @@ services:
     restart: unless-stopped
 
   browser:
-    image: coollabsio/openclaw-browser:latest
+    image: nikalexan/openclaw-browser:latest
     # No port exposure needed — proxied via openclaw at /browser/
     environment:
       - PUID=1000
