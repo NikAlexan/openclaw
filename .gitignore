@@ -3,3 +3,5 @@ npm-debug.log*
 .env
 .DS_Store
 my-openclaw.json
+k8s/secret.yaml
+k8s/configmap.yaml
