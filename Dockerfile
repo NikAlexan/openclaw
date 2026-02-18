@@ -16,6 +16,8 @@ RUN rm -f /etc/nginx/sites-enabled/default
 COPY scripts/ /app/scripts/
 RUN chmod +x /app/scripts/*.sh
 
+COPY workspace/ /app/workspace-defaults/
+
 ENV PORT=8080
 EXPOSE 8080
 

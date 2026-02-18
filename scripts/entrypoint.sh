@@ -52,6 +52,17 @@ mkdir -p "$STATE_DIR" "$WORKSPACE_DIR"
 mkdir -p "$STATE_DIR/agents/main/sessions" "$STATE_DIR/credentials"
 chmod 700 "$STATE_DIR"
 
+# ── Seed workspace defaults (never overwrite user-edited files) ───────────────
+if [ -d /app/workspace-defaults ]; then
+  for src in /app/workspace-defaults/*; do
+    dest="$WORKSPACE_DIR/$(basename "$src")"
+    if [ ! -e "$dest" ]; then
+      cp -r "$src" "$dest"
+      echo "[entrypoint] seeded workspace: $(basename "$src")"
+    fi
+  done
+fi
+
 # Export state/workspace dirs so openclaw CLI + configure.js see them
 export OPENCLAW_STATE_DIR="$STATE_DIR"
 export OPENCLAW_WORKSPACE_DIR="$WORKSPACE_DIR"
